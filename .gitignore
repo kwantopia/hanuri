@@ -1,5 +1,6 @@
-venv
+hanuri-env
 *.pyc
 *.log
 *.pot
 local_settings.py
+*.sublime-workspace
