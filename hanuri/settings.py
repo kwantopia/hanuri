@@ -53,14 +53,19 @@ USE_L10N = True
 # If you set this to False, Django will not use timezone-aware datetimes.
 USE_TZ = True
 
+AWS_ACCESS_KEY_ID = ''
+AWS_SECRET_ACCESS_KEY = ''
+AWS_STORAGE_BUCKET_NAME = ''
+AWS_PRELOAD_METADATA = True
+
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
-MEDIA_ROOT = PROJECT_ROOT+'/sitemedia/'
+MEDIA_ROOT = PROJECT_ROOT + '/sitemedia/'
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
 # Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
-MEDIA_URL = 'http://s3.amazonaws.com/cdn.vinely.com/media/'
+MEDIA_URL = 'http://s3.amazonaws.com/%s/media/' % AWS_STORAGE_BUCKET_NAME
 
 # Absolute path to the directory static files should be collected to.
 # Don't put anything in this directory yourself; store your static files
@@ -70,7 +75,7 @@ STATIC_ROOT = PROJECT_ROOT + '/sitestatic/'
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
-STATIC_URL = 'http://s3.amazonaws.com/cdn.vinely.com/static/'
+STATIC_URL = 'http://s3.amazonaws.com/%s/static/' % AWS_STORAGE_BUCKET_NAME
 #STATIC_URL = '/static/'
 
 ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
@@ -91,11 +96,6 @@ STATICFILES_FINDERS = (
 #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
     'compressor.finders.CompressorFinder',
 )
-
-AWS_ACCESS_KEY_ID = 'AKIAIA5QIVHATQ54TYBQ'
-AWS_SECRET_ACCESS_KEY = '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'
-AWS_STORAGE_BUCKET_NAME = 'cdn.vinely.com'
-AWS_PRELOAD_METADATA = True
 
 if DEPLOY:
   # for handling https static file serving
