@@ -1,0 +1,17 @@
+{
+    "folders":
+    [
+        {
+            "path": ".",
+            "folder_exclude_patterns": ["venv"],
+            "name": "Hanuri (One2gather.org)"
+        }
+    ],
+    "settings":
+    {
+        "tab_size": 2
+    },
+    "build_systems":
+    [
+    ]
+}
