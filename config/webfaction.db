@@ -1,0 +1,11 @@
+host: web345.webfaction.com
+port: 5432
+db: multiplazas_hanuri
+user: multiplazas_hanuri
+password: ee7168f1
+
+host: web345.webfaction.com
+port: 5432
+db: multiplazas_hanuri_prod
+user: multiplazas_hanuri_prod
+password: 3fa9c195

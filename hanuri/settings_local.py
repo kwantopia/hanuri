@@ -17,6 +17,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -38,6 +39,7 @@ INSTALLED_APPS = (
     #'accounts',
     #'main',
     'hanuri',
+    'main',
     'south',
     #'emailusernames',
     'debug_toolbar',
