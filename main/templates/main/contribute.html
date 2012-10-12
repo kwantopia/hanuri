@@ -4,20 +4,46 @@
 
   <div class="row">
     <div class="span12">
-      <h1>World with God</h1>
+      <h1>Contribute</h1>
       <p>
-        Reference the origins of campaign for understanding the intrinsic nature of God: <a href="http://www.worldwithgod.org">http://www.worldwithgod.org</a>
+        If you are interested in helping out with restoring broken relationships in the world, feel free to add your comments and contact info here:
       </p>
     </div>
   </div>
 
   <div class="row">
     <div class="span12">
-      <h1>About Me</h1>
-      <p>
-        My name is Hyung Ho Lee.  An ordinary man, father of three children and husband of a lovely wife.  My mission is to help bring peace in this world and find others that may contribute to this goal together.  Feel free to e-mail me at hhlee at multiplazas.com.
-      </p>
+      <div id="disqus_thread"></div>
     </div>
   </div>
 
 {% endblock content %}
+
+{% block additional_scripts %}
+  <script type="text/javascript">
+      /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+      var disqus_shortname = 'one2gether'; // required: replace example with your forum shortname
+
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+  <script type="text/javascript">
+  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+  var disqus_shortname = 'one2gether'; // required: replace example with your forum shortname
+
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function () {
+      var s = document.createElement('script'); s.async = true;
+      s.type = 'text/javascript';
+      s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+      (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+  }());
+  </script>
+{% endblock additional_scripts %}
