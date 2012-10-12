@@ -1,0 +1,21 @@
+.broken-relationship-label 
+{
+  font-size: 1.2em;
+  font-weight: bold; 
+}
+
+.restore-relationship-label
+{
+  font-size: 1.2em;
+  font-weight: bold; 
+}
+
+.vertical-space-25
+{
+  margin-bottom: 25px;
+}
+
+.vertical-space-100
+{
+  margin-bottom: 100px;
+}

@@ -37,7 +37,6 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     'django.contrib.admindocs',
     #'accounts',
-    #'main',
     'hanuri',
     'main',
     'south',
@@ -46,7 +45,7 @@ INSTALLED_APPS = (
     'sorl.thumbnail',
     's3_folder_storage',
     'gunicorn',
-    'compressor',
+    'compressor'
 )
 
 TEMPLATE_DIRS = (

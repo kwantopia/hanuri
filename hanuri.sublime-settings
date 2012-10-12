@@ -9,7 +9,14 @@
     ],
     "settings":
     {
-        "tab_size": 2
+        "tab_size": 2,
+        "SublimeLinter":
+        {
+            "pep8_ignore":
+            [
+                "E111", "E501", "E251"
+            ]   
+        }
     },
     "build_systems":
     [

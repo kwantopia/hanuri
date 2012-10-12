@@ -6,3 +6,4 @@ local_settings.py
 *.sublime-workspace
 sitestatic
 sitemedia
+hanuri.test.db

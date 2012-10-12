@@ -1,0 +1,32 @@
+{% extends "main/base.html" %}
+
+{% block content %}
+
+  <div class="row">
+    <div class="span6">
+      {# Korean #}
+
+      {% for post in ko_posts %}
+        <h3>{{ post.broken }}</h3>
+        <blockquote>
+          <p>{{ post.restore }}</p>
+          <small>{{ post.timestamp }}</small>
+        </blockquote>
+      {% endfor %}
+    </div>
+
+    <div class="span6">
+      {# English #}
+
+      {% for post in en_posts %}
+        <h3>{{ post.broken }}</h3>
+        <blockquote>
+          <p>{{ post.restore }}</p>
+          <small>{{ post.country }} - {{ post.timestamp }}</small>
+        </blockquote>
+      {% endfor %}    
+    </div>
+
+  </div>
+
+{% endblock content %}

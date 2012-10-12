@@ -6,7 +6,9 @@
     <div class="span6">
       <h1>{{ hanuri_title_ko }}</h1>
 
-      <form method="POST" action="{% url save_korean %}"> 
+      <form method="POST" action="{% url home_page %}"> 
+        {% csrf_token %}
+        {{ ko_form.errors }}
         <div class="one-together-proclamation span6">
           <p>
           우리는,<br>
@@ -37,35 +39,42 @@
           믿음을 세우고 복원해야할것입니다.<br>        
           </p>
         </div>
-
-        <div class="broken-relationship-label span6">
-          <label>부서진 관계를 기술해 보세요</label>
-        </div>
-        <div class="broken-relationship-input span6">
-          {{ form.broken }}
-        </div>
-        <div class="recover-relationship-label span6">
-          <label>올바른 관계와 믿음을 세우고 복원하는 방법을 기술해 보세요</label>
-        </div>
-        <div class="recover-relationship-input span6">
-          {{ form.recover }}
+        <div class="vertical-space-25">
+          &nbsp;
         </div>
 
         <div class="control-group">
           <div class="controls">
-            <button type="submit" class="btn btn-primary">Post</button>
-            <button type="reset" class="btn">Clear</button>
+            <div class="broken-relationship-label">
+              부서진 관계를 기술해 보세요
+            </div>
+            <div class="broken-relationship-input">
+              {{ ko_form.broken }}
+            </div>
+            <div class="restore-relationship-label">
+              올바른 관계와 믿음을 세우고 복원하는 방법을 기술해 보세요
+            </div>
+            <div class="restore-relationship-input">
+              {{ ko_form.restore }}
+            </div>
           </div>
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary" name="submit" value="Korean">Post</button>
+            <button type="reset" class="btn">Clear</button>
         </div>
       </form>
     </div>
 
     <div class="span6">
       <h1>{{ hanuri_title_en }}</h1>
-      <form method="POST" action="{% url save_english %}"}
+      <form method="POST" action="{% url home_page %}">
+        {% csrf_token %}
+        {{ en_form.errors }}
         <div class="one-together-proclamation span6">
           <p>
-          We from <span>{{ form.country }}</span><br>
+          We from <span>{{ en_form.country }}</span><br>
           Further, the Human Beings in the World,<br>
           </p>
 
@@ -100,25 +109,28 @@
           and so Are together with".<br>
           </p>
         </div>
-        <div class="broken-relationship-label span6">
-          <label>Please describe the broken relations</label>
-        </div>
-        <div class="broken-relationship-input span6">
-          {{ form.broken }}
-        </div>
-        <div class="recover-relationship-label span6">
-          <label>Please describe how to set up and restore the right relations and faith</label>
-        </div>
-        <div class="recover-relationship-input span6">
-          {{ form.recover }}
-        </div>
         <div class="control-group">
           <div class="controls">
-            <button type="submit" class="btn btn-primary">Post</button>
-            <button type="reset" class="btn">Clear</button>
+            <div class="broken-relationship-label">
+              Please describe the broken relations
+            </div>
+            <div class="broken-relationship-input">
+              {{ en_form.broken }}
+            </div>
           </div>
+        </div>
+        <div class="restore-relationship-label">
+          Please describe how you restore the relation and faith
+        </div>
+        <div class="restore-relationship-input">
+          {{ en_form.restore }}
+        </div>
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary" name="submit" value="English">Post</button>
+            <button type="reset" class="btn">Clear</button>
         </div>       
       </form>
     </div>
+
   </div> <!-- .row -->
 {% endblock content %}

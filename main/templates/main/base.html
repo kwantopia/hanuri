@@ -17,6 +17,8 @@
     </style>
     <link href="{% static "bootstrap/css/bootstrap-responsive.css" %}" rel="stylesheet">
 
+    <link href="{% static "css/hanuri.css" %}" rel="stylesheet">
+
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -43,12 +45,12 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="#">One Together Project</a>
+          <a class="brand" href="{% url home_page %}">One Together Project</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li class="active"><a href="#">Contribute</a></li>
-              <li><a href="#about">Recent</a></li>
-              <li><a href="#contact">Contact</a></li>
+              <li{% if recent_page %} class="active"{% endif %}><a href="{% url recent %}">Recent Posts</a></li>
+              <li{% if contribute_page %} class="active"{% endif %}><a href="{% url contribute %}">Contribute</a></li>
+              <li{% if contact_page %} class="active"{% endif %}><a href="{% url contact %}">Contact</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -56,6 +58,22 @@
     </div>
 
     <div class="container">
+
+      <div class="message-container">
+        {% if messages %}
+          <div class="messages">
+            {% for message in messages %}
+              {% if "info" in message.tags %}
+                <div class="alert alert-info">{{ message|safe }}</div>
+              {% elif "success" in message.tags %}
+                <div class="alert alert-success">{{ message|safe }}</div>
+              {% elif "error" in message.tags or "warning" in message.tags %}
+                <div class="alert alert-error">{{ message|safe }}</div>
+              {% endif %}
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div> <!-- .message-container -->
 
       {% block content %}
       <h1>Bootstrap starter template</h1>
