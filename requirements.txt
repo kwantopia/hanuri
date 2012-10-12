@@ -9,3 +9,4 @@ django-compressor==1.2
 South==0.7.5
 django-sslify==0.2
 -e git://github.com/jamstooks/django-s3-folder-storage.git#egg=django_s3_folder_storage-dev
+newrelic
