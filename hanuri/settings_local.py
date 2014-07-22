@@ -9,7 +9,6 @@ EMAIL_FILE_PATH = PROJECT_ROOT + '/emails/'
 import dj_database_url
 
 DATABASES = {'default': dj_database_url.config(default='sqlite:///%s/hanuri.test.db' % PROJECT_ROOT)}
-#DATABASES = {'default': dj_database_url.config(default='postgres://vinely:winedora@localhost:5432/winedora')}
 
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
