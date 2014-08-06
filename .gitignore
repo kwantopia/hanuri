@@ -2,7 +2,8 @@ hanuri-env
 *.pyc
 *.log
 *.pot
-local_settings.py
+settings_local.py
+settings_debug.py
 *.sublime-workspace
 sitestatic
 sitemedia

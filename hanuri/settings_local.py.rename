@@ -9,7 +9,6 @@ EMAIL_FILE_PATH = PROJECT_ROOT + '/emails/'
 import dj_database_url
 
 DATABASES = {'default': dj_database_url.config(default='sqlite:///%s/hanuri.test.db' % PROJECT_ROOT)}
-#DATABASES = {'default': dj_database_url.config(default='postgres://vinely:winedora@localhost:5432/winedora')}
 
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
@@ -17,6 +16,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -35,17 +35,16 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     'django.contrib.admindocs',
-    'accounts',
-    'main',
+    #'accounts',
     'hanuri',
+    'main',
     'south',
-    'emailusernames',
+    #'emailusernames',
     'debug_toolbar',
     'sorl.thumbnail',
-    #'storages',
     's3_folder_storage',
     'gunicorn',
-    'compressor',
+    'compressor'
 )
 
 TEMPLATE_DIRS = (
@@ -58,15 +57,14 @@ TEMPLATE_DIRS = (
 
 
 DEBUG_TOOLBAR_PANELS = (
-    'debug_toolbar.panels.version.VersionDebugPanel',
-    'debug_toolbar.panels.timer.TimerDebugPanel',
-    'debug_toolbar.panels.settings_vars.SettingsVarsDebugPanel',
-    'debug_toolbar.panels.headers.HeaderDebugPanel',
-    'debug_toolbar.panels.request_vars.RequestVarsDebugPanel',
-    'debug_toolbar.panels.template.TemplateDebugPanel',
-    'debug_toolbar.panels.sql.SQLDebugPanel',
-    'debug_toolbar.panels.signals.SignalDebugPanel',
-    'debug_toolbar.panels.logger.LoggingPanel',
+    'debug_toolbar.panels.versions.VersionsPanel',
+    'debug_toolbar.panels.timer.TimerPanel',
+    'debug_toolbar.panels.settings.SettingsPanel',
+    'debug_toolbar.panels.headers.HeadersPanel',
+    'debug_toolbar.panels.request.RequestPanel',
+    'debug_toolbar.panels.templates.TemplatesPanel',
+    'debug_toolbar.panels.sql.SQLPanel',
+    'debug_toolbar.panels.signals.SignalsPanel',
 )
 
 MEDIA_URL = '/media/'
