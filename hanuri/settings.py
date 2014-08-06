@@ -191,8 +191,8 @@ if DEPLOY:
 else:
   EMAIL_HOST = 'smtp.gmail.com'
   EMAIL_PORT = 587
-  EMAIL_HOST_USER = 'support@multiplazas.com'
-  EMAIL_HOST_PASSWORD = 'hi2winedora'
+  EMAIL_HOST_USER = ''
+  EMAIL_HOST_PASSWORD = ''
   EMAIL_USE_TLS = True
 
 SESSION_ENGINE = "django.contrib.sessions.backends.signed_cookies"
