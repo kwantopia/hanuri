@@ -1,12 +1,21 @@
-Django==1.4.1
-dj-database-url==0.2.1
-ipython==0.13
-psycopg2==2.4.5
-django-debug-toolbar==0.9.4
+Django==1.6.5
+South==1.0
+boto==2.32.1
+dj-database-url==0.3.0
+django-appconf==0.6
+django-compressor==1.4
+django-debug-toolbar==1.2.1
+-e git://github.com/jamstooks/django-s3-folder-storage.git@c9140b52842f4ba1bca28430055d622182cfa662#egg=django_s3_folder_storage-master
+django-sslify==0.2.3
+django-storages==1.1.8
+gunicorn==19.1.0
+ipython==2.1.0
+newrelic==2.22.1.20
+psycopg2==2.5.3
+pyelasticsearch==0.6.1
+requests==2.3.0
+simplejson==3.6.0
+six==1.7.3
 sorl-thumbnail==11.12
-gunicorn==0.14.6
-django-compressor==1.2
-South==0.7.5
-django-sslify==0.2
--e git://github.com/jamstooks/django-s3-folder-storage.git#egg=django_s3_folder_storage-dev
-newrelic
+sqlparse==0.1.11
+wsgiref==0.1.2

@@ -45,12 +45,12 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="{% url home_page %}">One Together Project</a>
+          <a class="brand" href="{% url 'home_page' %}">One Together Project</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li{% if recent_page %} class="active"{% endif %}><a href="{% url recent %}">Recent Posts</a></li>
-              <li{% if contribute_page %} class="active"{% endif %}><a href="{% url contribute %}">Contribute</a></li>
-              <li{% if contact_page %} class="active"{% endif %}><a href="{% url contact %}">Contact</a></li>
+              <li{% if recent_page %} class="active"{% endif %}><a href="{% url 'recent' %}">Recent Posts</a></li>
+              <li{% if contribute_page %} class="active"{% endif %}><a href="{% url 'contribute' %}">Contribute</a></li>
+              <li{% if contact_page %} class="active"{% endif %}><a href="{% url 'contact' %}">Contact</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
